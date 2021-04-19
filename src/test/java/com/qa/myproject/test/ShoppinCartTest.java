@@ -91,5 +91,10 @@ public class ShoppinCartTest extends BaseTest{
 	 shoppingCartPage.doCheckout();
 		
 	}
+	
+	public void continueShopping()
+	{
+		System.out.println("Continue Shopping");
+	}
 
 }

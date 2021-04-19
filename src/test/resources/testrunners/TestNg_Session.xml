@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Regression" parallel="tests">
+<listeners>
+<listener class-name="com.qa.myproject.testListeners.ExtentReportListener"/>
+
+</listeners>
+  <test  name="LoginPage Test">
+  
+ 
+    <classes>
+      <class name="com.qa.myproject.test.LoginPageTest"/>
+    </classes>
+    
+   </test>
+   
+   <test name="AccountsPage Test">
+   
+   <classes>
+      <class name="com.qa.myproject.test.AccountsPageTest"/>
+    </classes>
+   
+   
+   </test>
+     <test name="ProductInfoPage Test">
+   
+   <classes>
+      <class name="com.qa.myproject.test.ProductInfoTest"/>
+    </classes>
+   
+   
+   </test>
+     <test name="Register Test">
+   
+   <classes>
+      <class name="com.qa.myproject.test.RegisterPageTest"/>
+    </classes>
+   
+   
+   </test>
+   
+   <test name="Shoppingcart Test">
+   
+   <classes>
+      <class name="com.qa.myproject.test.ShoppinCartTest"/>
+    </classes>
+   
+   
+   </test>
+    
+   
+ 
+    
+    
+   <!-- Test -->
+</suite> <!-- Suite -->

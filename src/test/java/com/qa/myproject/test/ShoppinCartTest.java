@@ -92,9 +92,6 @@ public class ShoppinCartTest extends BaseTest{
 		
 	}
 	
-	public void continueShopping()
-	{
-		System.out.println("Continue Shopping");
-	}
+	
 
 }

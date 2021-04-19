@@ -32,10 +32,10 @@ public class ShoppinCartTest extends BaseTest{
 	public void verifyItemTextAfterAddToCartTest()
 	{
 		
-		String productName="macbook";
+		String productName="sony";
 		homePage.doSearch(productName);
 		
-		productInfoPage=homePage.selectProdctFromSearch("MacBook Pro");
+		productInfoPage=homePage.selectProdctFromSearch("Sony VAIO");
 		
 		productInfoPage.AddToCart();
 		
@@ -48,31 +48,31 @@ public class ShoppinCartTest extends BaseTest{
 	
 	public void verifyProductModelTest()
 	{
-		String model="MacBook Pro";
+		String model="Sony VAIO";
 		String pModel=shoppingCartPage.verifyProductModel(model);
 		
 		
 		
-		Assert.assertEquals(pModel, Constants.MacBOOK_MODEL_NUMBER);
+		Assert.assertEquals(pModel, Constants.SONY_MODEL_NUMBER);
 	}
 	
 	@Test 
 	public void verifyProdUnitPriceTest()
 	{
-		String model="MacBook Pro";
+		String model="Sony VAIO";
 		String pModel=shoppingCartPage.verifyProductUnitPrice(model);
 		
 //		DecimalFormat formatter = new DecimalFormat("#,###.00");
 //        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
 		
-		String unit_price=shoppingCartPage.unitPriceFormatter("MacBook");		
+		String unit_price=shoppingCartPage.unitPriceFormatter("Sony VAIO");		
 		Assert.assertEquals(pModel, unit_price);
 	}
 	
 	@Test 
 	public void verifyProdTotalPriceTest()
 	{
-		String model="MacBook Pro";
+		String model="Sony VAIO";
 		String pModel=shoppingCartPage.verifyProductTotalPrice(model);
 		
 		//String untiPrice=shoppingCartPage.verifyProductUnitPrice(model).split("$")[0].trim();
@@ -87,7 +87,7 @@ public class ShoppinCartTest extends BaseTest{
 		
 		
 		
-		double tot=q*Constants.MACBBOK_UNIT_PRICE;
+		double tot=q*Constants.SONY_UNIT_PRICE;
 		
 		System.out.println(tot);
 		
@@ -97,18 +97,11 @@ public class ShoppinCartTest extends BaseTest{
 		DecimalFormat formatter = new DecimalFormat("#,###.00");
         String tot2=formatter.format(tot);
         
-        String totalPrice="$"+tot2;
+          String totalPrice="$"+tot2;
         
         System.out.println(totalPrice);
 		
-		 
-        
-		
-		
-		
-		
-		
-		Assert.assertEquals(pModel,totalPrice );
+		 Assert.assertEquals(pModel,totalPrice );
 	}
 	
 	@Test(enabled=false)

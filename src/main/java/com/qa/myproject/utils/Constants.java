@@ -28,12 +28,15 @@ public class Constants {
    public static final String MacBOOK_MODEL_NUMBER="Product 18";
    
    public static final String SAMSUNG_MODEL_NUMBER="SAM1";
+   public static final String SONY_MODEL_NUMBER="Product 19";
    
    public static  double SAMSUNG_UNIT_PRICE=199.99;
    
    public static  double IMAC_UNIT_PRICE=100.00;
    
    public static  double MACBBOK_UNIT_PRICE=2000.00;
+   
+   public static  double SONY_UNIT_PRICE=1000.00;
    
    
    

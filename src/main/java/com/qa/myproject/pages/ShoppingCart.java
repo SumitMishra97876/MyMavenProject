@@ -110,6 +110,13 @@ public class ShoppingCart {
 	        
 	         formatted_unit_price="$"+samsung_Unit_Price;
 		}
+		else if(productName.equals("Sony VAIO"))
+		{
+			DecimalFormat formatter = new DecimalFormat("#,###.00");
+	        String sony_Unit_Price=formatter.format(Constants.SONY_UNIT_PRICE);
+	        
+	         formatted_unit_price="$"+sony_Unit_Price;
+		}
 		
 		return formatted_unit_price;
 	}

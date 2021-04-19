@@ -1,7 +1,9 @@
 package com.qa.myproject.utils;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Constants {
    public static final String LOGIN_PAGE_TITLE="Account Login";
@@ -26,6 +28,21 @@ public class Constants {
    public static final String MacBOOK_MODEL_NUMBER="Product 18";
    
    public static final String SAMSUNG_MODEL_NUMBER="SAM1";
+   
+   public static  double SAMSUNG_UNIT_PRICE=199.99;
+   
+   public static  double IMAC_UNIT_PRICE=100.00;
+   
+   public static  double MACBBOK_UNIT_PRICE=2000.00;
+   
+   
+   
+   static double n=2000.00;
+	static NumberFormat nm=NumberFormat.getInstance(new Locale("en", "US"));
+	
+	public static final String MACBOOK_UPRICE =nm.format(n);
+	
+	
    
    
    

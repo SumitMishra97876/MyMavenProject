@@ -1,5 +1,11 @@
 package com.qa.myproject.test;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Formatter;
+import java.util.Locale;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -26,10 +32,10 @@ public class ShoppinCartTest extends BaseTest{
 	public void verifyItemTextAfterAddToCartTest()
 	{
 		
-		String productName="samsung";
+		String productName="macbook";
 		homePage.doSearch(productName);
 		
-		productInfoPage=homePage.selectProdctFromSearch("Samsung Galaxy Tab 10.1");
+		productInfoPage=homePage.selectProdctFromSearch("MacBook Pro");
 		
 		productInfoPage.AddToCart();
 		
@@ -42,31 +48,70 @@ public class ShoppinCartTest extends BaseTest{
 	
 	public void verifyProductModelTest()
 	{
-		String model="Samsung";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductModel(model);
 		
-		Assert.assertEquals(pModel, Constants.SAMSUNG_MODEL_NUMBER);
+		
+		
+		Assert.assertEquals(pModel, Constants.MacBOOK_MODEL_NUMBER);
 	}
 	
 	@Test 
 	public void verifyProdUnitPriceTest()
 	{
-		String model="Samsung";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductUnitPrice(model);
 		
-		Assert.assertEquals(pModel, "$199.99");
+//		DecimalFormat formatter = new DecimalFormat("#,###.00");
+//        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
+		
+		String unit_price=shoppingCartPage.unitPriceFormatter("MacBook");		
+		Assert.assertEquals(pModel, unit_price);
 	}
 	
 	@Test 
 	public void verifyProdTotalPriceTest()
 	{
-		String model="Samsung";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductTotalPrice(model);
 		
-		Assert.assertEquals(pModel, "$199.99");
+		//String untiPrice=shoppingCartPage.verifyProductUnitPrice(model).split("$")[0].trim();
+		
+		//double uPrice=Double.parseDouble(untiPrice);
+		
+		String quantity=shoppingCartPage.getProductqunatity(model);
+		
+		System.out.println(quantity);
+		
+		double q=Double.parseDouble(quantity);
+		
+		
+		
+		double tot=q*Constants.MACBBOK_UNIT_PRICE;
+		
+		System.out.println(tot);
+		
+		
+		
+
+		DecimalFormat formatter = new DecimalFormat("#,###.00");
+        String tot2=formatter.format(tot);
+        
+        String totalPrice="$"+tot2;
+        
+        System.out.println(totalPrice);
+		
+		 
+        
+		
+		
+		
+		
+		
+		Assert.assertEquals(pModel,totalPrice );
 	}
 	
-	@Test
+	@Test(enabled=false)
 	
 	public void verifySubTotalTest()
 	{
@@ -75,7 +120,7 @@ public class ShoppinCartTest extends BaseTest{
 		Assert.assertEquals(subTot, "$14,399.99");
 	}
 	
-	@Test
+	@Test(enabled=false)
 	
 	public void verifyTotalTest()
 	{
@@ -84,7 +129,7 @@ public class ShoppinCartTest extends BaseTest{
 		Assert.assertEquals(tot, "$14,399.99");
 	}
 	
-	@Test
+	@Test(enabled=false)
 	
 	public void checkoutTest()
 	{

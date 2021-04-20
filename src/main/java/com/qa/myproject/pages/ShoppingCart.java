@@ -5,8 +5,6 @@ import java.text.DecimalFormat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import com.qa.myproject.utils.Constants;
 import com.qa.myproject.utils.ElementsUtil;
 

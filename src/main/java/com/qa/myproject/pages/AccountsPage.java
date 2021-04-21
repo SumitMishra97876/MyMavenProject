@@ -31,7 +31,9 @@ public class AccountsPage extends BasePage {
 	private By searchItemsResult=By.cssSelector(".product-layout .product-thumb");
 	
 	private By resultItems=By.xpath("//div[@class='product-thumb']//h4/a");
+	private By cart=By.xpath("//div[@id='cart']/button");
 	
+	private By viewCart=By.xpath("(//p[@class='text-right']/a/strong/i)[1]");
 	
 	public AccountsPage(WebDriver driver)
 	{
@@ -127,6 +129,15 @@ public class AccountsPage extends BasePage {
 			}
 		}
 		return new ProductInfoPage(driver);
+	}
+	
+	public ShoppingCart goToCart()
+	{
+		util.doClick(cart);
+		
+		util.doClick(viewCart);
+		
+		return new ShoppingCart(driver);
 	}
 	
 	

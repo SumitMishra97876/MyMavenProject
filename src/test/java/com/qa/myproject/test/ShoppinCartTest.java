@@ -28,7 +28,7 @@ public class ShoppinCartTest extends BaseTest{
 	}
 	
 	
-	@Test(priority=-1)
+	@Test
 	public void verifyItemTextAfterAddToCartTest()
 	{
 		
@@ -42,6 +42,14 @@ public class ShoppinCartTest extends BaseTest{
 		shoppingCartPage=productInfoPage.getToShoppingCart();
 		
 		Assert.assertTrue(shoppingCartPage.verifyAddedItemText());
+	}
+	
+	
+	@Test(priority=-1)
+	
+	public void arriveToCartTest()
+	{
+		shoppingCartPage=homePage.goToCart();
 	}
 	
 	@Test
@@ -104,25 +112,72 @@ public class ShoppinCartTest extends BaseTest{
 		 Assert.assertEquals(pModel,totalPrice );
 	}
 	
-	@Test(enabled=false)
+	@Test
+	public String verifyTotalCartPriceTest()
+	{
+		String qImac=shoppingCartPage.getProductqunatity("iMac");
+		double quantityImac=Double.parseDouble(qImac);
+		
+		double totImac=quantityImac*Constants.IMAC_UNIT_PRICE;
+		
+		String qMac=shoppingCartPage.getProductqunatity("MacBook Pro");
+		double quantityMac=Double.parseDouble(qMac);
+		
+		double totMac=quantityMac*Constants.MACBBOK_UNIT_PRICE;
+		
+		
+		String qSam=shoppingCartPage.getProductqunatity("Samsung");
+		double quantitySam=Double.parseDouble(qSam);
+		
+		double totSam=quantitySam*Constants.SAMSUNG_UNIT_PRICE;
+		
+		
+		
+		String qSony=shoppingCartPage.getProductqunatity("Sony VAIO");
+		double quantitySony=Double.parseDouble(qSony);
+		
+		double totSony=quantitySony*Constants.SONY_UNIT_PRICE;
+		
+		double totalCartItemPrice=totImac+totMac+totSam+totSony;
+		
+		
+		DecimalFormat formatter = new DecimalFormat("#,###.00");
+        String totalCartItemsPrice=formatter.format(totalCartItemPrice);
+        
+          String totalCheckoutAmount="$"+totalCartItemsPrice;
+          
+          System.out.println(totalCheckoutAmount);
+        
+		  return totalCheckoutAmount;
+		
+		
+		
+		
+	}
+	
+	@Test
 	
 	public void verifySubTotalTest()
 	{
 		String subTot=shoppingCartPage.verifySubTotal();
 		
-		Assert.assertEquals(subTot, "$14,399.99");
+		String subTotal =verifyTotalCartPriceTest();
+
+		Assert.assertEquals(subTot, subTotal);
 	}
 	
-	@Test(enabled=false)
+	@Test
 	
 	public void verifyTotalTest()
 	{
 		String tot=shoppingCartPage.verifyTotal();
 		
-		Assert.assertEquals(tot, "$14,399.99");
+		String total=verifyTotalCartPriceTest();
+		
+		Assert.assertEquals(tot, total);
 	}
 	
-	@Test(enabled=false)
+	@Test(priority=2)
 	
 	public void checkoutTest()
 	{

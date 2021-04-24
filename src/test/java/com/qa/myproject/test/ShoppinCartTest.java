@@ -73,7 +73,8 @@ public class ShoppinCartTest extends BaseTest{
 //		DecimalFormat formatter = new DecimalFormat("#,###.00");
 //        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
 		
-		String unit_price=shoppingCartPage.unitPriceFormatter("iMac");		
+		//String unit_price=shoppingCartPage.unitPriceFormatter("iMac");	
+		String unit_price=shoppingCartPage.unitPriceFormatter(Constants.IMAC_UNIT_PRICE);	
 		Assert.assertEquals(pModel, unit_price);
 	}
 	

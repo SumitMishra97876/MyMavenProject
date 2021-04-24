@@ -8,9 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.qa.myproject.base.BasePage;
 import com.qa.myproject.utils.ElementsUtil;
 
-public class ProductInfoPage {
+public class ProductInfoPage extends BasePage {
 	
 	private WebDriver driver;
 	

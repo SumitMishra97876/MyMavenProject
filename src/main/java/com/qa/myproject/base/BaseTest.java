@@ -5,7 +5,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.BeforeTest;
 
 import com.qa.myproject.pages.AccountsPage;
@@ -14,7 +14,7 @@ import com.qa.myproject.pages.ProductInfoPage;
 import com.qa.myproject.pages.Register;
 import com.qa.myproject.pages.ShoppingCart;
 
-public class BaseTest {
+public class BaseTest  {
 	
 	public BasePage basePage;
 	public LoginPage loginPage;
@@ -34,10 +34,13 @@ public class BaseTest {
 	public void setUp()
 	{
 		basePage=new BasePage();
-		prop=basePage.init_prop();
+     	prop=basePage.init_prop();
+		
 	String browserName=	prop.getProperty("browser");
-	driver=	basePage.init_driver(browserName);
+	//driver=	basePage.init_driver(browserName);
+	driver=basePage.init_driver(browserName);
 	loginPage=new LoginPage(driver);
+	
 	driver.get(prop.getProperty("url"));
 		
 	}

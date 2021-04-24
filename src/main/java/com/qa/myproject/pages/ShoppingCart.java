@@ -5,10 +5,12 @@ import java.text.DecimalFormat;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import com.qa.myproject.base.BasePage;
 import com.qa.myproject.utils.Constants;
 import com.qa.myproject.utils.ElementsUtil;
 
-public class ShoppingCart {
+public class ShoppingCart extends BasePage {
 	
     private WebDriver driver;
 	
@@ -82,42 +84,45 @@ public class ShoppingCart {
 		return driver.findElement(By.xpath("(//a[contains(text(),'"+productName+"')])[2]//parent::td//following-sibling::td[2]//input")).getAttribute("value");
 	}
 	
-	public String unitPriceFormatter(String productName)
+	//public String unitPriceFormatter(String productName,int unitPrice)
+	public String unitPriceFormatter(double unitPrice)
 	{
 		String formatted_unit_price=null;
-		if(productName.equals("iMac"))
-		{
-			DecimalFormat formatter = new DecimalFormat("#,###.00");
-	        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
+//		if(productName.equals("iMac"))
+//		{
+      		DecimalFormat formatter = new DecimalFormat("#,###.00");
+//	        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
+      		String imac_Unit_Price=formatter.format(unitPrice);
+      		
 	        
-	        formatted_unit_price="$"+imac_Unit_Price;
+	       return formatted_unit_price="$"+imac_Unit_Price;
 			
 		}
-		else if(productName.equals("MacBook"))
-		{
-			DecimalFormat formatter = new DecimalFormat("#,###.00");
-	        String macbook_Unit_Price=formatter.format(Constants.MACBBOK_UNIT_PRICE);
-	        
-	         formatted_unit_price="$"+macbook_Unit_Price;
-			
-		}
-		else if(productName.equals("Samsung"))
-		{
-			DecimalFormat formatter = new DecimalFormat("#,###.00");
-	        String samsung_Unit_Price=formatter.format(Constants.SAMSUNG_UNIT_PRICE);
-	        
-	         formatted_unit_price="$"+samsung_Unit_Price;
-		}
-		else if(productName.equals("Sony VAIO"))
-		{
-			DecimalFormat formatter = new DecimalFormat("#,###.00");
-	        String sony_Unit_Price=formatter.format(Constants.SONY_UNIT_PRICE);
-	        
-	         formatted_unit_price="$"+sony_Unit_Price;
-		}
-		
-		return formatted_unit_price;
-	}
-	
+//		else if(productName.equals("MacBook"))
+//		{
+//			DecimalFormat formatter = new DecimalFormat("#,###.00");
+//	        String macbook_Unit_Price=formatter.format(Constants.MACBBOK_UNIT_PRICE);
+//	        
+//	         formatted_unit_price="$"+macbook_Unit_Price;
+//			
+//		}
+//		else if(productName.equals("Samsung"))
+//		{
+//			DecimalFormat formatter = new DecimalFormat("#,###.00");
+//	        String samsung_Unit_Price=formatter.format(Constants.SAMSUNG_UNIT_PRICE);
+//	        
+//	         formatted_unit_price="$"+samsung_Unit_Price;
+//		}
+//		else if(productName.equals("Sony VAIO"))
+//		{
+//			DecimalFormat formatter = new DecimalFormat("#,###.00");
+//	        String sony_Unit_Price=formatter.format(Constants.SONY_UNIT_PRICE);
+//	        
+//	         formatted_unit_price="$"+sony_Unit_Price;
+//		}
+//		
+//		return formatted_unit_price;
+//	}
+//	
 
 }

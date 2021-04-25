@@ -34,14 +34,16 @@ public class BaseTest  {
 	public void setUp()
 	{
 		basePage=new BasePage();
-     	prop=basePage.init_prop();
+        prop=basePage.init_prop();
+		String browserName=	prop.getProperty("browser");
 		
-	String browserName=	prop.getProperty("browser");
+		
 	//driver=	basePage.init_driver(browserName);
 	driver=basePage.init_driver(browserName);
 	loginPage=new LoginPage(driver);
 	
 	driver.get(prop.getProperty("url"));
+	
 		
 	}
 	

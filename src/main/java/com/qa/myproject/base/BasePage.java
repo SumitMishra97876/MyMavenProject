@@ -25,7 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BasePage {
 	
 	public WebDriver driver;
-	 public Properties prop;
+	 public static  Properties prop;
 	 
 	 public static String highlight;
 	 
@@ -82,6 +82,8 @@ public class BasePage {
 	 * This method is used to load the properties from config.properties file
 	 * @return it returns properties prop reference 
 	 */
+	 
+	
 	
 	public Properties init_prop()
 	{
@@ -97,6 +99,8 @@ public class BasePage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 		return prop;
 	}
 	

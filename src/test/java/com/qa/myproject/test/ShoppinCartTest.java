@@ -175,6 +175,7 @@ public class ShoppinCartTest extends BaseTest{
 		String tot=shoppingCartPage.verifyTotal();
 		
 		String total=verifyTotalCartPriceTest();
+		System.out.println(total);
 		
 		Assert.assertEquals(tot, total);
 	}

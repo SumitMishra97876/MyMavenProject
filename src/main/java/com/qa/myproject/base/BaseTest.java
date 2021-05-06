@@ -14,7 +14,7 @@ import com.qa.myproject.pages.ProductInfoPage;
 import com.qa.myproject.pages.Register;
 import com.qa.myproject.pages.ShoppingCart;
 
-public class BaseTest  {
+public class BaseTest {
 	
 	public BasePage basePage;
 	public LoginPage loginPage;

@@ -184,6 +184,7 @@ public class ShoppinCartTest extends BaseTest{
 	
 	public void checkoutTest()
 	{
+		System.out.println("Checked Out");
 	 shoppingCartPage.doCheckout();
 		
 	}

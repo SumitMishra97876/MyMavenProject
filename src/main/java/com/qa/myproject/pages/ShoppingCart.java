@@ -92,10 +92,10 @@ public class ShoppingCart extends BasePage {
 //		{
       		DecimalFormat formatter = new DecimalFormat("#,###.00");
 //	        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
-      		String imac_Unit_Price=formatter.format(unitPrice);
+      		String product_unit_price=formatter.format(unitPrice);
       		
 	        
-	       return formatted_unit_price="$"+imac_Unit_Price;
+	       return formatted_unit_price="$"+product_unit_price;
 			
 		}
 //		else if(productName.equals("MacBook"))

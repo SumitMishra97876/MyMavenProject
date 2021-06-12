@@ -32,10 +32,10 @@ public class ShoppinCartTest extends BaseTest{
 	public void verifyItemTextAfterAddToCartTest()
 	{
 		
-		String productName="imac";
+		String productName="MacBook Pro";
 		homePage.doSearch(productName);
 		
-		productInfoPage=homePage.selectProdctFromSearch("iMac");
+		productInfoPage=homePage.selectProdctFromSearch("MacBook Pro");
 		
 		productInfoPage.AddToCart();
 		
@@ -56,32 +56,32 @@ public class ShoppinCartTest extends BaseTest{
 	
 	public void verifyProductModelTest()
 	{
-		String model="iMac";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductModel(model);
 		
 		
 		
-		Assert.assertEquals(pModel, Constants.IMAC_MODEL_NUMBER);
+		Assert.assertEquals(pModel, Constants.MacBOOK_MODEL_NUMBER);
 	}
 	
 	@Test 
 	public void verifyProdUnitPriceTest()
 	{
-		String model="iMac";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductUnitPrice(model);
 		
 //		DecimalFormat formatter = new DecimalFormat("#,###.00");
 //        String imac_Unit_Price=formatter.format(Constants.IMAC_UNIT_PRICE);
 		
 		//String unit_price=shoppingCartPage.unitPriceFormatter("iMac");	
-		String unit_price=shoppingCartPage.unitPriceFormatter(Constants.IMAC_UNIT_PRICE);	
+		String unit_price=shoppingCartPage.unitPriceFormatter(Constants.MACBBOK_UNIT_PRICE);	
 		Assert.assertEquals(pModel, unit_price);
 	}
 	
 	@Test 
 	public void verifyProdTotalPriceTest()
 	{
-		String model="iMac";
+		String model="MacBook Pro";
 		String pModel=shoppingCartPage.verifyProductTotalPrice(model);
 		
 		//String untiPrice=shoppingCartPage.verifyProductUnitPrice(model).split("$")[0].trim();
@@ -96,7 +96,7 @@ public class ShoppinCartTest extends BaseTest{
 		
 		
 		
-		double tot=q*Constants.IMAC_UNIT_PRICE;
+		double tot=q*Constants.MACBBOK_UNIT_PRICE;
 		
 		System.out.println(tot);
 		

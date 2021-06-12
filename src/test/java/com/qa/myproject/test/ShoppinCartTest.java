@@ -173,6 +173,7 @@ public class ShoppinCartTest extends BaseTest{
 	public void verifyTotalTest()
 	{
 		String tot=shoppingCartPage.verifyTotal();
+		System.out.println(tot);
 		
 		String total=verifyTotalCartPriceTest();
 		System.out.println(total);
